@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     BrowserRouter as Router
 } from 'react-router-dom';
-import './App.css';
+import './sass/index.scss';
 
 import Container from './pages'
 
