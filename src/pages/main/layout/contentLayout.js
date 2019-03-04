@@ -4,10 +4,6 @@ import { Route } from 'react-router-dom'
 import routes from './../../../router'
 
 export default  class ContentLayout extends Component{
-    constructor(props){
-        super(props)
-    }
-
     render(){
         return(
             <div>

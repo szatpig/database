@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 import { Layout } from 'antd';
 
 import ContentLayout from './layout/contentLayout'
+import HeadLayout from './layout/headLayout'
+import MenuLayout from './layout/menuLayout'
 
 const { Header, Sider, Content } = Layout;
 
@@ -11,9 +13,13 @@ export default class MainContainer extends Component{
     render(){
         return(
             <Layout className="main-container">
-                <Sider>菜单栏</Sider>
+                <Sider>
+                    <MenuLayout />
+                </Sider>
                 <Layout>
-                    <Header className='header-container'>状态栏</Header>
+                    <Header className='header-container'>
+                        <HeadLayout />
+                    </Header>
                     <Content className='content-container'>
                         <ContentLayout />
                     </Content>
