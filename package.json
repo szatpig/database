@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.3.0",
     "antd": "^3.13.6",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
@@ -12,20 +13,19 @@
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.11.0",
-    "customize-cra": "^0.2.12",
-    "react-app-rewired": "^2.1.0",
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.5",
+    "babel-plugin-import": "^1.11.0",
     "babel-plugin-named-asset-import": "^0.3.1",
     "babel-preset-react-app": "^7.0.1",
     "bfj": "6.1.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "1.0.0",
+    "customize-cra": "^0.2.12",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "5.12.0",
@@ -53,10 +53,12 @@
     "postcss-preset-env": "6.5.0",
     "postcss-safe-parser": "4.0.1",
     "react-app-polyfill": "^0.2.1",
+    "react-app-rewired": "^2.1.0",
     "react-dev-utils": "^7.0.3",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
+    "source-map-explorer": "^1.7.0",
     "terser-webpack-plugin": "1.2.2",
     "url-loader": "1.1.2",
     "webpack": "4.28.3",
@@ -67,7 +69,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -126,6 +129,14 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
     ]
   }
 }
